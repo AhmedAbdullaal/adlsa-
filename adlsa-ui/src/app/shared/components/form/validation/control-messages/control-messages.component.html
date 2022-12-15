@@ -1,0 +1,10 @@
+<mat-error *ngIf="errorMessage && fieldName !== fieldNameWillNotShowMessage">{{ errorMessage }}</mat-error>
+<mat-error *ngIf="showMessage && requiredLength > 10">
+  {{ 'error.shared-error.enter-plz' | translate }}{{ requiredLength }}{{ 'error.shared-error.number' | translate }}
+</mat-error>
+<mat-error *ngIf="showMessage && requiredLength <= 10">
+  {{ 'error.shared-error.enter-plz' | translate }}{{ requiredLength }}{{ 'error.shared-error.numbers' | translate }}
+</mat-error>
+<mat-error *ngIf="errorMessagePhone">
+  {{ 'error.shared-error.enter-plz' | translate }}{{ 'error.shared-error.phone-error' | translate }}
+</mat-error>

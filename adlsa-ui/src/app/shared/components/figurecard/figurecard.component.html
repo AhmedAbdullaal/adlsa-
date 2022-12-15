@@ -1,0 +1,12 @@
+<div class="figure-card card">
+    <a [routerLink]="path">
+      <div [ngStyle]="{ 'background': linearColor, 'box-shadow': boxShadow }" class="card-header">
+        <i class="material-icons">{{ headerIcon }}</i>
+      </div>
+      <div class="card-content">
+        <p class="category">{{ category }}</p>
+        <h5 class="title">{{ title }}</h5>
+      </div>
+    </a>
+  </div>
+  

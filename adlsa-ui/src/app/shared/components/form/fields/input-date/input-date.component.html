@@ -1,0 +1,11 @@
+<mat-form-field style="width: 100%" appearance="outline">
+    <mat-label>{{ fieldName | translate }}</mat-label>
+    <input *ngIf="onchange" matInput [matDatepicker]="dp2" (dateChange)="onchange($event)" [formControl]="control" >
+    <input *ngIf="!onchange" matInput [matDatepicker]="dp2"  [formControl]="control" >
+    <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+    <mat-datepicker #dp2 ></mat-datepicker>
+    <mat-error>
+      <app-control-messages [control]="control" [fieldName]="fieldName"></app-control-messages>
+    </mat-error>
+  </mat-form-field>
+  

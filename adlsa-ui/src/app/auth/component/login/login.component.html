@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xxl-7 col-lg-7">
+        <div class="card">
+          <div class="card-header pt-2 pb-2 text-center bg-primary">
+            <a href="#"><br /> </a>
+          </div>
+  
+          <div class="card-body p-4">
+            <div class="text-center w-75 m-auto">
+              <h4 class="text-dark-50 text-center mt-0 fw-bold">{{ 'card-titel.login' | translate }} </h4>
+            </div>
+  
+            <div class="row form">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <app-input-text [control]="username" [maxLength]="150" [type]="'text'" fieldName="input.user-name">
+                  </app-input-text>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  
+                  <mat-form-field style="width: 100%" appearance="outline">
+                    <mat-label>{{ 'input.password' | translate }} </mat-label>
+                    <input matInput maxLength="150" type="password" [formControl]="password" />
+                    <mat-error *ngIf="password.invalid">
+                        {{ 'error.enter-password' | translate }}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 mb-0 text-center">
+              <button (click)="submit()" class="btn btn-primary" [disabled]="submitted">
+                <i class="mdi mdi-vote-outline"></i>
+                {{ 'button.login' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

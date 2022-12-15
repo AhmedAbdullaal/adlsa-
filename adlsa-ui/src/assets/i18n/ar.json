@@ -1,0 +1,29 @@
+{
+  "header": {
+    "login": "تسجيل الدخول ",
+    "logout": "تسجيل الخروج"
+  },
+  "card-titel": {
+    "login": "تسجيل الدخول "
+  },
+  "select": {},
+  "select-option": {
+    "choose": "اختر"
+  },
+  "input": {
+    "user-name": "اسم المستخدم",
+    "password": "كلمه المرور"
+  },
+  "button": {
+    "edit": "تعديل",
+    "add": "اضافة",
+    "delete": "مسح",
+    "login": "تسجيل الدخول ",
+    "print": "طباعه",
+    "search": "بحث"
+  },
+  "table": {},
+  "error": {
+    "enter-password": "يرجي ادخال كلمة المرور"
+  }
+}

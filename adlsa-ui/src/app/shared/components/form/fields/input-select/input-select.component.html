@@ -1,0 +1,16 @@
+<mat-form-field style="width: 100%" appearance="outline">
+    <mat-label>{{ fieldName | translate }}</mat-label>
+    <mat-select *ngIf="!selectedValue" [compareWith]="compareFu" [formControl]="control" [disabled]="disabled">
+      <mat-option [value]="''">{{ 'select-option.choose' | translate }}</mat-option>
+      <mat-option *ngFor="let d of data" [value]="d">{{ viewedValue ? d[viewedValue] : d }}</mat-option>
+    </mat-select>
+  
+    <mat-select *ngIf="selectedValue" [formControl]="control" [disabled]="disabled">
+      <mat-option [value]="''">{{ 'select-option.choose' | translate }}</mat-option>
+      <mat-option *ngFor="let d of data" [value]="d[selectedValue]">{{ d[viewedValue] }}</mat-option>
+    </mat-select>
+    <mat-error>
+      <app-control-messages [control]="control" [fieldName]="fieldName"></app-control-messages>
+    </mat-error>
+  </mat-form-field>
+  

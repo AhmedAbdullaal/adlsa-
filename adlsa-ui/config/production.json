@@ -1,0 +1,9 @@
+{
+    "api": {
+      "baseUrl": "http://172.20.15.62:7001/ghse/api/"
+    },
+    "idle": {
+      "timeout": 10
+    }
+  }
+  

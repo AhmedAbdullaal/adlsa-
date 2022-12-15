@@ -1,0 +1,32 @@
+<mat-table [dataSource]="dataSource" fxFlexFill>
+
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+      <mat-header-cell *matHeaderCellDef> {{column.header}} </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index ">
+        {{column.columnDef === 'position' ? i+1 : column.cell(element)}}
+  
+        <div *ngIf="column.columnDef === 'Actions'">
+          <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{ $implicit: element }"></ng-template>
+        </div>
+      </mat-cell>
+    </ng-container>
+  
+    <ng-container *ngIf="totalCost" matColumnDef="summary">
+      <td mat-footer-cell *matFooterCellDef colspan="2">
+         المجموع :{{totalCost}}
+      </td>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <div *ngIf="totalCost">
+      <tr mat-footer-row *matFooterRowDef="['summary']" class="sticky-footer"></tr>
+    </div>
+  
+  </mat-table>
+  <mat-paginator [length]="totalRows" [pageIndex]="page" [pageSize]="size"
+                  (page)="pageChanged($event)" [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements" dir="rtl">
+  </mat-paginator>
+  

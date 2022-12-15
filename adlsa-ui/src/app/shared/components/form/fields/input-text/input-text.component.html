@@ -1,0 +1,42 @@
+<mat-form-field style="width: 100%" appearance="outline">
+    <mat-label>{{ fieldName | translate }}</mat-label>
+    <input
+      matInput
+      appInputNumber
+      [type]="type"
+      [id]="id"
+      [formControl]="control"
+      appInputLimiter
+      [maxLength]="maxLength"
+      (blur)="blur()"
+      (change)="executeEvent()"
+      moveNextByMaxLength
+      appAutoFocus
+      [autofocus]="autofocus"
+      [nextInput]="nextInput"
+      autocomplete="off"
+      appInputNumberOnly
+      [OnlyNumber]="OnlyNumber"
+      appInputEnglishCharOnly
+      [englishCharOnly]="englishCharOnly"
+      appInputArabicCharOnly
+      [arabicCharOnly]="arabicCharOnly"
+      [min]="min"
+      [readonly]="readonly"
+      [ngClass]="{ makeArrows: arrowsNumberInputRemoved }"
+    />
+    <mat-hint *ngIf="hint" align="start"
+      ><strong>{{ hint }}</strong>
+    </mat-hint>
+    <mat-error>
+      <app-control-messages
+        [control]="control"
+        [fieldName]="fieldName"
+        [showMessage]="showMessage"
+        [errorMessagePhone]="errorMessagePhone"
+        [fieldNameWillNotShowMessage]="fieldNameWillNotShowMessage"
+        [requiredLength]="requiredLength"
+      ></app-control-messages>
+    </mat-error>
+  </mat-form-field>
+  
