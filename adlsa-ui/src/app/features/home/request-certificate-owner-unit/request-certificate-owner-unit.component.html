@@ -1,0 +1,30 @@
+<form [formGroup]="form" autocomplete="off" novalidate class="p-4">
+    <div
+      class="me-3"
+      fxLayout="row wrap"
+      fxLayoutAlign="start center"
+      fxLayoutAlign.xs="center center"
+      fxLayoutAlign.sm="center center"
+      fxLayoutGap="3%"
+    >
+      <app-input-text 
+        [control]="unitNumber" 
+       
+        fxFlex="22"
+        fxFlex.sm="45"
+        fxFlex.lt-sm="90"
+        [maxLength]="50"
+        [readonly]="true"
+        >
+      </app-input-text>
+      <app-input-text
+        [control]="unitType"
+        
+        fxFlex="22"
+        fxFlex.sm="45"
+        fxFlex.lt-sm="90"
+        [maxLength]="10"
+        [readonly]="true"
+      ></app-input-text>
+    </div>
+  </form>
