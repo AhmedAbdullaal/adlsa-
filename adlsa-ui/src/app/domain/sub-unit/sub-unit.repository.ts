@@ -9,6 +9,7 @@ import { SettingsService } from 'src/app/core/services/config/settings.service';
 @Injectable({
   providedIn: 'root',
 })
+
 export class SubUnitRepository extends ResourceService<any> {
 private readonly typeUrl = `${SettingsService.configurationEnvironment.api.baseUrl}sub-unit/type`;
 private readonly statusUrl = `${SettingsService.configurationEnvironment.api.baseUrl}sub-unit/status`;
@@ -37,13 +38,13 @@ private readonly statusUrl = `${SettingsService.configurationEnvironment.api.bas
     );
   }
 
-  override toServerModel(entity: any): {} {
+  toServerModel(entity: any): {} {
       return {
         entity
       };
   }
 
-  override fromServerModel(json: any): any {
+  fromServerModel(json: any): any {
     return json;
   }
 }
